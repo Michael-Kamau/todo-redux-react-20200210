@@ -21,8 +21,9 @@ class AddPost extends Component {
     onSubmit(e){
         e.preventDefault()
         const post={
+            userId:1,
             title:this.state.title,
-            body: this.state.body
+            completed:false
         }
 
         this.props.createPost(post)

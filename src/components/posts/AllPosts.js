@@ -1,9 +1,18 @@
 import React, {Component} from "react";
 import {connect} from 'react-redux'
+import PropTypes from 'prop-types'
 
 import Post from './Post'
 
 class AllPosts extends Component {
+
+    componentWillReceiveProps(nextProps, nextContext) {
+        console.log(nextProps)
+        if (nextProps.newPost) {
+            console.log(nextProps.newPost)
+            this.props.posts.unshift(nextProps.newPost)
+        }
+    }
 
     render() {
 
@@ -26,10 +35,13 @@ class AllPosts extends Component {
 
     }
 }
-
+// AllPosts.protoTypes={
+//     posts: PropTypes.array.isRequired,
+//     newPost: PropTypes.object
+// }
 const mapStateToProps = state => ({
     posts: state.posts.items,
-    newPosts: state.posts.item
+    newPost: state.posts.item,
 
 })
 

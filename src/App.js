@@ -18,6 +18,7 @@ class  App extends Component{
         this.props.fetchPosts()
     }
 
+
     render(){
         return (
             <div className="App">
