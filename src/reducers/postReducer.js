@@ -67,7 +67,7 @@ export default function (state = initialState, action) {
             console.log(action.payload)
             return{
                 ...state,
-                items:[...state.items.slice(0,action.payload),{...state.items[action.payload].completed=!state.items[action.payload].completed},...state.items.slice(action.payload+1),]
+                items:[...state.items.slice(0,action.payload),{...state.items[action.payload],completed:!state.items[action.payload].completed},...state.items.slice(action.payload+1),]
             };
         default:
             return state;

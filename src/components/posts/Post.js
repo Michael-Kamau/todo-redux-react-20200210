@@ -21,7 +21,13 @@ function Post( {dispatch,post, index}){
                 </div>
                 <div className="extra content">
                     <div className="ui two buttons">
-                        <button className="ui green basic button" onClick={()=>dispatch({type:"TOGGLE_COMPLETE",payload:post.id})}>Completed</button>
+                        {post.completed? (
+                            <button className="ui blue basic button" onClick={()=>dispatch({type:"TOGGLE_COMPLETE",payload:index})}>Incomplete</button>
+
+                        ):(
+                            <button className="ui green basic button"  onClick={()=>dispatch({type:"TOGGLE_COMPLETE",payload:index})}>Completed</button>
+
+                        )}
                         <button className="ui red basic button" onClick={()=>dispatch({type:"DELETE_POST",payload:post.id})}>Delete</button>
                     </div>
                 </div>
