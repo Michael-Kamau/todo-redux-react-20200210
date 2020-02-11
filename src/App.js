@@ -10,10 +10,7 @@ import AllPosts from "./components/posts/AllPosts";
 
 
 class  App extends Component{
-    // useEffect(() => {
-    //     // Update the document title using the browser API
-    //     dispatch({type: 'FETCH_POSTS'})
-    // });
+
     componentWillMount() {
         this.props.fetchPosts()
     }

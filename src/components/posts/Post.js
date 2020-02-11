@@ -15,8 +15,9 @@ function Post( {dispatch,post, index}){
     return(
             <div className="ui card">
                 <div className="content">
-                    {/*<img src="/images/avatar/large/steve.jpg" className="ui mini right floated image"/>*/}
-                    <div className="header" style={getStyle()}><p>{post.title}</p></div>
+
+                    <div className="header" > <h3>Todo</h3></div>
+                    <p style={getStyle()}>{post.title}</p>
 
                 </div>
                 <div className="extra content">

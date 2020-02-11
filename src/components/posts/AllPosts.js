@@ -14,12 +14,19 @@ class AllPosts extends Component {
         }
     }
 
+    cardsStyle(){
+        return{
+            textAlign:'center',
+            alignContent:'center'
+        }
+    }
+
     render() {
 
         return (
-            <div>
-                <h1>All Posts</h1>
-                <div className="ui cards">
+            <div className="text-center" style={this.cardsStyle()}>
+                <h1>All Todos</h1>
+                <div className="ui cards" >
                     {
                         this.props.posts.map((post, index) => (
                             <Post key={index} index={index} post={post}/>

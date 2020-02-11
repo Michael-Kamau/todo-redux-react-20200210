@@ -28,16 +28,22 @@ class AddPost extends Component {
 
         this.props.createPost(post)
     }
+
+    formStyle(){
+        return{
+            margin:'20px 40px',
+            width:'580px',
+            padding:'20px',
+        }
+
+    }
     render() {
         return (
-            <form className="ui form" onSubmit={this.onSubmit}>
+            <form className="ui form card" onSubmit={this.onSubmit} style={this.formStyle()}>
+                <h4>Add Todo</h4>
                 <div className="field">
-                    <label>Post Title</label>
+                    <label>Todo Title</label>
                     <input placeholder="Post Title"  type='text' name='title' onChange={this.onChange} value={this.state.title} required/>
-                </div>
-                <div className="field">
-                    <label>Post Body</label>
-                    <input placeholder="Content" type='text' name='body' onChange={this.onChange} value={this.state.body} required/>
                 </div>
                 <button type="submit" className="ui button" >Submit</button>
                 {/*<button type="button" className="ui button" onClick={() => dispatch({type: "NEW_POST"})}>Submit</button>*/}
